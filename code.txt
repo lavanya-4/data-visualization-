@@ -1,0 +1,18 @@
+library(ggplot2)
+chennai_reservoir_levels<- read.csv("C:/Users/lavan/Downloads/chennai_reservoir_levels.csv")
+print(chennai_reservoir_levels)
+head(chennai_reservoir_levels)
+table(chennai_reservoir_levels$POONDI)
+barplot(table(chennai_reservoir_levels$POONDI), ylab='range of water level',main='Barplot of POONDI')
+names(chennai_reservoir_levels)[1:5] 
+head(names(chennai_reservoir_levels)[1:5])
+table(chennai_reservoir_levels$CHOLAVARAM)
+count <- table(chennai_reservoir_levels$CHOLAVARAM)
+print(count)
+table(chennai_reservoir_levels$CHOLAVARAM)/500
+barplot(count)
+pie(count)
+class(chennai_reservoir_levels$CHOLAVARAM)
+summary(chennai_reservoir_levels)
+quantile(chennai_reservoir_levels$POONDI, probs = c(0.9, 213.0, 782.0, 2006.0, 3231.0))
+boxplot(chennai_reservoir_levels$POONDI~chennai_reservoir_levels$CHOLAVARAM)
